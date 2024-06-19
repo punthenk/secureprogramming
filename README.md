@@ -6,7 +6,7 @@ Deze repository bevat de broncode voor een educatieve webapplicatie die is ontwo
 ## Installatie van Docker:
 
 1. Zorg ervoor dat Docker is geïnstalleerd op je systeem.
-2. Download de Applicatie vanuit GitHub.
+2. Download of clone de Applicatie vanuit GitHub.
 3. Navigeer naar de Projectmap:
 4. Open een terminal of command prompt.
 5. Navigeer naar de map waar je de applicatie hebt opgeslagen (bijvoorbeeld `cd pad_naar_project`).
