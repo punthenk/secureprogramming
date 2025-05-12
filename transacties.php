@@ -29,7 +29,7 @@ $incomingTransactions = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $user['username'] ?> | ALFA Bank</title>
+    <title><?= $user['username'] ?> | Omanido</title>
     <!-- Voeg Tailwind CSS toe via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
 </head>
@@ -40,7 +40,7 @@ $incomingTransactions = $stmt->fetchAll();
     <div class="grid grid-cols-3 gap-4">
         <div class="col-span-1">
             <div class="flex justify-center">
-                <img src="img/ALFA1.png" alt="ALFA Bank Logo" class="mb-6 w-1/2">
+                <img src="img/Omanido1.png" alt="Omanido Logo" class="mb-6 w-1/2">
             </div>
             <h2 class="text-lg text-center font-bold mb-6"><?= $user['username'] ?></h2>
             <p class="text-center mb-6">Saldo: €<?= number_format($user['balance'], 2, ',', '.') ?></p>

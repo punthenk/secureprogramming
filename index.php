@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALFA Bank</title>
+    <title>Omanido</title>
     <!-- Voeg Tailwind CSS toe via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -48,9 +48,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="container mx-auto mt-20 p-6 bg-white max-w-sm shadow-md rounded-md">
         <div class="flex justify-center">
-            <img src="img/ALFA1.png" alt="ALFA Bank Logo" class="mb-6 w-1/2"> <!-- Aanpassen van de breedte naar 1/2 van de container -->
+            <img src="img/Omanido1.png" alt="Omanido Logo" class="mb-6 w-1/2"> <!-- Aanpassen van de breedte naar 1/2 van de container -->
         </div>
-        <h2 class="text-lg text-center font-bold mb-6">Inloggen bij ALFA Bank</h2>
+        <h2 class="text-lg text-center font-bold mb-6">Inloggen bij Omanido</h2>
         <form action="<? echo htmlspecialchars($_SERVER["PHP_SELF"]);  ?>" method="post">
             <div class="mb-4">
                 <label for="username" class="block text-sm font-medium text-gray-700">Gebruikersnaam:</label>

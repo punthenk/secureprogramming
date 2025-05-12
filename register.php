@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALFA Bank - registreren</title>
+    <title>Omanido - registreren</title>
     <!-- Voeg Tailwind CSS toe via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -38,9 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="container mx-auto mt-20 p-6 bg-white max-w-sm shadow-md rounded-md">
         <div class="flex justify-center">
-            <img src="img/ALFA1.png" alt="ALFA Bank Logo" class="mb-6 w-1/2">
+            <img src="img/Omanido1.png" alt="Omanido Logo" class="mb-6 w-1/2">
         </div>
-        <h2 class="text-lg text-center font-bold mb-6">Registreren bij ALFA Bank</h2>
+        <h2 class="text-lg text-center font-bold mb-6">Registreren bij Omanido</h2>
         <?php if (isset($error)): ?>
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
                 <strong class="font-bold">Fout!</strong>
