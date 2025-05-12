@@ -9,7 +9,7 @@ if (isset($_SESSION['loggedin'])) {
 <div class="bg-white py-4 shadow-md">
     <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <a href="<?= isset($_SESSION['loggedin']) ? 'dashboard.php' : 'index.php' ?>">
-            <img src="../img/ALFA2.png" alt="Bank Logo" class="h-12">
+            <img src="../img/Omanido2.png" alt="Bank Logo" class="h-12">
         </a>
         <?php if (isset($_SESSION['loggedin'])): ?>
             <div class="text-right">
