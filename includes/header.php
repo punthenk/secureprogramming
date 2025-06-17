@@ -12,10 +12,12 @@ if (isset($_SESSION['loggedin'])) {
             <img src="../img/Omanido2.png" alt="Bank Logo" class="h-12">
         </a>
         <?php if (isset($_SESSION['loggedin'])): ?>
-            <div class="text-right">
-                <p class="text-gray-500 text-sm">Welkom,  <a href="transacties.php?id=<?= $userId ?>" class="text-blue-600 hover:underline"><?= $username ?></a></p>
-               
-            </div>
+        <div class="text-right">
+            <form action="transacties.php" method="POST">
+                <input type="hidden" name="user_id" value="<?= $userId?>" />
+                <p class="text-gray-500 text-sm">Welkom, <button class="text-blue-600 hover:underline"><?= $username ?></button></p>
+            </form>
+        </div>
         <?php endif; ?>
     </div>
 </div>
