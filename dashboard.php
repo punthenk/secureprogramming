@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if ($bedrag > 0) {
                 // Zet de transactie in de database
                 $stmt = $pdo->prepare("INSERT INTO transaction (sender, receiver, amount, description) VALUES (?, ?, ?, ?)");
-                $stmt->execute([$_SESSION['user']['id'], $ontvanger['id'], $bedrag, $_POST['omschrijving']]);
+                $stmt->execute([$_SESSION['user']['id'], $ontvanger['id'], $bedrag, htmlspecialchars($_POST['omschrijving'])]);
 
                 // Haal het saldo van de ontvanger op
                 $stmt = $pdo->prepare("SELECT balance FROM user WHERE username = ?");
@@ -123,10 +123,10 @@ $saldo = $stmt->fetchColumn();
                         <input type="submit" value="Overmaken" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline">
                         <?php
                             if(isset($error)) {
-                                echo '<p class="text-red-500 text-sm mt-2">' . $error . '</p>';
+                                echo '<p class="text-red-500 text-sm mt-2">' . htmlspecialchars($error) . '</p>';
                             }
                             if(isset($success)) {
-                                echo '<p class="text-green-500 text-sm mt-2">' . $success . '</p>';
+                                echo '<p class="text-green-500 text-sm mt-2">' . htmlspecialchars($success) . '</p>';
                             }
                         ?>
                     </form>
