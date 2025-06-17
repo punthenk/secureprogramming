@@ -2,11 +2,6 @@
 session_start();
 include 'includes/db.php';
 
-//Tables aanmaken
-include 'includes/userTable.php';
-include 'includes/transactionTable.php';
-
-
 // Gebruik prepared statements om SQL-injecties te voorkomen
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
@@ -44,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body class="bg-gray-100">
     <?php include 'includes/header.php'; ?>
-    <?php print_r($_SESSION['user']['isAdmin']) ?>
 
     <div class="container mx-auto mt-20 p-6 bg-white max-w-sm shadow-md rounded-md">
         <div class="flex justify-center">
