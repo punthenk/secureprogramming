@@ -45,6 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body class="bg-gray-100">
     <?php include 'includes/header.php'; ?>
+    <?php print_r($_SESSION['user']['isAdmin']) ?>
 
     <div class="container mx-auto mt-20 p-6 bg-white max-w-sm shadow-md rounded-md">
         <div class="flex justify-center">
