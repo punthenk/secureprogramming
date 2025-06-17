@@ -72,6 +72,7 @@ $saldo = $stmt->fetchColumn();
 
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,6 +80,7 @@ $saldo = $stmt->fetchColumn();
     <!-- Voeg Tailwind CSS toe via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100">
     <?php include 'includes/header.php'; ?>
 
@@ -91,13 +93,19 @@ $saldo = $stmt->fetchColumn();
                         <h3 class="font-bold text-xl mb-2">Mijn Saldo</h3>
                         <p class="text-sm text-gray-600 mb-4">Actueel Beschikbaar Saldo</p>
                     </div>
-                    <p class="text-4xl font-bold mb-4 <?php echo $saldo >= 0 ? 'text-green-500' : 'text-red-500'; ?> self-center">
-                        €<?php echo number_format($saldo, 2, ',', '.'); ?>
+                    <p
+                        class="text-4xl font-bold mb-4 <?php echo $saldo >= 0 ? 'text-green-500' : 'text-red-500'; ?> self-center">
+                        €
+                        <?php echo number_format($saldo, 2, ',', '.'); ?>
                     </p>
                     <div class="text-center">
-                        <a href="transacties.php?id=<?= $_SESSION['user']['id'] ?>" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                            Transactieoverzicht
-                        </a>
+                        <form action="transacties.php" method="POST">
+                            <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id']?>"/>
+                            <button type="submit"
+                                    class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                    Transactieoverzicht
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -110,17 +118,22 @@ $saldo = $stmt->fetchColumn();
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
                         <div class="mb-4">
                             <label for="ontvanger" class="block text-sm font-medium text-gray-700">Ontvanger:</label>
-                            <input type="text" id="ontvanger" name="ontvanger" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3">
+                            <input type="text" id="ontvanger" name="ontvanger" required
+                                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3">
                         </div>
                         <div class="mb-4">
                             <label for="bedrag" class="block text-sm font-medium text-gray-700">Bedrag(€):</label>
-                            <input type="number" id="bedrag" name="bedrag" step="0.01" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3">
+                            <input type="number" id="bedrag" name="bedrag" step="0.01" required
+                                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3">
                         </div>
                         <div class="mb-4">
-                            <label for="omschrijving" class="block text-sm font-medium text-gray-700">Omschrijving:</label>
-                            <input type="text" id="omschrijving" name="omschrijving" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3">
+                            <label for="omschrijving"
+                                class="block text-sm font-medium text-gray-700">Omschrijving:</label>
+                            <input type="text" id="omschrijving" name="omschrijving" required
+                                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3">
                         </div>
-                        <input type="submit" value="Overmaken" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline">
+                        <input type="submit" value="Overmaken"
+                            class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline">
                         <?php
                             if(isset($error)) {
                                 echo '<p class="text-red-500 text-sm mt-2">' . htmlspecialchars($error) . '</p>';
@@ -135,4 +148,5 @@ $saldo = $stmt->fetchColumn();
         </div>
     </div>
 </body>
+
 </html>
